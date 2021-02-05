@@ -4,10 +4,10 @@ export PATH
 
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
-#	Description: Brook
+#	Description: Brook Fix Version
 #	Version: 1.0.6
-#	Author: Toyo
-#	Blog: https://doub.io/wlzy-jc37/
+#	Original Author: Toyo
+#	Update Date: 2021-2-4
 #=================================================
 
 sh_ver="1.0.6"
