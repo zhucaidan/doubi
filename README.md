@@ -49,6 +49,18 @@
 
 ## 代理相关
 
+## brook-pf.sh  最新版Brook可用 Update：2021-2-4
+
+- 脚本说明: Brook 端口转发 一键安装管理脚本
+- 系统支持: CentOS6+ / Debian6+ / Ubuntu14+
+- 使用方法: https://doub.io/wlzy-37/
+
+#### 下载安装:
+``` bash
+wget -N --no-check-certificate https://raw.githubusercontent.com/zhucaidan/doubi/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
+```
+
+---
 ## ss_go.sh
 
 - 脚本说明: Shadowsocks 一键安装管理脚本
@@ -200,18 +212,6 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBack
 #### 下载安装:
 ``` bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
-```
-
----
-## brook-pf.sh
-
-- 脚本说明: Brook 端口转发 一键安装管理脚本
-- 系统支持: CentOS6+ / Debian6+ / Ubuntu14+
-- 使用方法: https://doub.io/wlzy-37/
-
-#### 下载安装:
-``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
 ```
 
 ---
