@@ -73,7 +73,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/zhucaidan/doubi
 
 #### 下载安装:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ss-go.sh && chmod +x ss-go.sh && bash ss-go.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/zhucaidan/doubi/master/ss-go.sh && chmod +x ss-go.sh && bash ss-go.sh
 ```
 
 ---
