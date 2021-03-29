@@ -327,7 +327,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBack
 
 #### 下载安装:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/zhucaidan/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 ```
 
 ---
