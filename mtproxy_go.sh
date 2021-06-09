@@ -69,7 +69,7 @@ check_pid(){
 	PID=$(ps -ef| grep "./mtg "| grep -v "grep" | grep -v "init.d" |grep -v "service" |awk '{print $2}')
 }
 check_new_ver(){
-	new_ver=$(wget -qO- https://api.github.com/repos/9seconds/mtg/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
+	new_ver=$(wget -qO- https://api.github.com/repos/zhucaidan/mtg/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
 	[[ -z ${new_ver} ]] && echo -e "${Error} MTProxy 最新版本获取失败！" && exit 1
 	echo -e "${Info} 检测到 MTProxy 最新版本为 [ ${new_ver} ]"
 }
@@ -106,16 +106,14 @@ Download(){
 	else
 		bit="arm"
 	fi
-	wget --no-check-certificate -N "https://github.com/9seconds/mtg/releases/download/${new_ver}/mtg-linux-${bit}"
-	[[ ! -e "mtg-linux-${bit}" ]] && echo -e "${Error} MTProxy 下载失败 !" && rm -rf "${file}" && exit 1
-	mv "mtg-linux-${bit}" "mtg"
-	[[ ! -e "mtg" ]] && echo -e "${Error} MTProxy 重命名失败 !" && rm -rf "${file}" && exit 1
+	wget --no-check-certificate -N "https://github.com/zhucaidan/mtg/releases/download/${new_ver}/mtg"
+	[[ ! -e "mtg" ]] && echo -e "${Error} MTProxy 下载失败 !" && rm -rf "${file}" && exit 1
 	chmod +x mtg
 	echo "${new_ver}" > ${Now_ver_File}
 }
 Service(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/service/mtproxy_go_centos" -O /etc/init.d/mtproxy-go; then
+		if ! wget --no-check-certificate "https://raw.githubusercontent.com/zhucaidan/doubi/master/service/mtproxy_go_centos" -O /etc/init.d/mtproxy-go; then
 			echo -e "${Error} MTProxy服务 管理脚本下载失败 !"
 			rm -rf "${file}"
 			exit 1
@@ -124,7 +122,7 @@ Service(){
 		chkconfig --add mtproxy-go
 		chkconfig mtproxy-go on
 	else
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/service/mtproxy_go_debian" -O /etc/init.d/mtproxy-go; then
+		if ! wget --no-check-certificate "https://raw.githubusercontent.com/zhucaidan/doubi/master/service/mtproxy_go_debian" -O /etc/init.d/mtproxy-go; then
 			echo -e "${Error} MTProxy服务 管理脚本下载失败 !"
 			rm -rf "${file}"
 			exit 1
