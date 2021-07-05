@@ -66,7 +66,7 @@ View_User(){
 }
 do_start(){
 	check_running
-	if [[ $? -ne 0 ]]; then
+	if [[ $? -eq 0 ]]; then
 		echo -e "${Info} ${NAME} (PID ${PID}) 正在运行..." && exit 0
 	else
 		read_config
@@ -88,7 +88,7 @@ do_start(){
 		eval nohup ./brook relay $(echo ${servers_all}) >> "${LOG}" 2>&1 &
 		sleep 2s
 		check_running
-		if [[ $? -ne 0 ]]; then
+		if [[ $? -eq 0 ]]; then
 			echo -e "${Info} ${NAME} 启动成功 !"
 			View_User
 		else
@@ -98,10 +98,10 @@ do_start(){
 }
 do_stop(){
 	check_running
-	if [[ $? -ne 0 ]]; then
+	if [[ $? -eq 0 ]]; then
 		kill -9 ${PID}
 		RETVAL=$?
-		if [[ $RETVAL -ne 0 ]]; then
+		if [[ $RETVAL -eq 0 ]]; then
 			echo -e "${Info} ${NAME} 停止成功 !"
 		else
 			echo -e "${Error} ${NAME} 停止失败 !"
@@ -113,7 +113,7 @@ do_stop(){
 }
 do_status(){
 	check_running
-	if [[ $? -ne 0 ]]; then
+	if [[ $? -eq 0 ]]; then
 		read_config
 		View_User
 		echo -e "${Info} ${NAME} (PID ${PID}) 正在运行..."
