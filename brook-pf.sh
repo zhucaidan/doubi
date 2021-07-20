@@ -640,7 +640,7 @@ if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_brook
 else
 	echo && echo -e "  Brook 端口转发 一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  ---- Toyo | doub.io/wlzy-jc37 ----
+  ---- Toyo | 仅支持 v20210214 ----
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
 ————————————
@@ -709,4 +709,3 @@ case "$num" in
 	;;
 esac
 fi
-
